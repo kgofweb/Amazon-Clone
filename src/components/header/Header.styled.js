@@ -46,7 +46,7 @@ export const HeaderOption = styled.div`
   display: flex;
   flex-direction: column;
   color: #fff;
-  margin: 0 15px;
+  margin: 0 10px;
 `
 
 export const HeaderOptionLineOne = styled.span`

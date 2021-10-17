@@ -10,8 +10,12 @@ import {
 } from "./Header.styled"
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
+// Use the context
+import { useStateValue } from '../stateProvider/StateProvider'
 
 const Header = () => {
+  const [{ basket }] = useStateValue()
+
   return (
     <HeaderStyled>
       {/* Logo */}
@@ -56,12 +60,10 @@ const Header = () => {
             {/* Basket Icon */}
             <ShoppingBasketIcon />
             {/* Number items in the basket */}
-            <span>0</span>
+            <span>{basket?.length}</span>
           </HeaderOptionBasket>
         </Link>
       </HeaderNav>
-
-      {/* Baskets Icon */}
     </HeaderStyled>
   )
 }
