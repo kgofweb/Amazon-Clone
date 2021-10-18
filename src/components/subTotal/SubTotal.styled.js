@@ -24,6 +24,7 @@ export const SubTotalStyled = styled.div`
 
   @media screen and (max-width: 730px) {
     width: 450px;
+    margin-top: 1.5rem;
   }
 `
 

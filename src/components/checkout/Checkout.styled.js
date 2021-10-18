@@ -17,7 +17,7 @@ export const CheckoutStyled = styled.div`
   }
 `
 
-export const CheckoutTitle = styled.h2`
+export const CheckoutTitle = styled.h3`
   padding: 10px 0;
   font-weight: 700;
   border-bottom: 1px solid lightgray;

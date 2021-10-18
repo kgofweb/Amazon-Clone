@@ -8,7 +8,7 @@ import { useStateValue } from "../stateProvider/StateProvider";
 import { actionTypes } from "../reducer/reducer";
 
 const Product = ({ id, title, price, rating, image }) => {
-  const [{ basket }, dispatch] = useStateValue()
+  const [{ basket, user }, dispatch] = useStateValue()
 
   const addToBasket = () => {
     // Add item to basket
@@ -22,7 +22,6 @@ const Product = ({ id, title, price, rating, image }) => {
         image
       }
     })
-
   }
 
   return <ProductStyled>

@@ -7,7 +7,8 @@ export const initialState = {
 // Init action type
 export const actionTypes = {
   ADD_TO_BASKET: 'ADD_TO_BASKET',
-  REMOVE_TO_BASKET: 'REMOVE_TO_BASKET'
+  REMOVE_TO_BASKET: 'REMOVE_TO_BASKET',
+  SET_USER: 'SET_USER'
 }
 
 export default function reducer(state = initialState, action) {
@@ -43,6 +44,12 @@ export default function reducer(state = initialState, action) {
         basket: newBasket
       }
 
+    // Logic to set user
+    case actionTypes.SET_USER:
+      return {
+        ...state, 
+        user: action.user
+      }
     default:
       return state;
   }

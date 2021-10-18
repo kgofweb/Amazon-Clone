@@ -4,15 +4,48 @@ import {
   SignInButton,
   RegisterButton 
 } from "./Login.styled"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
+import { useState } from "react"
+import { auth } from "../firebase/firebase"
 
 const Login = () => {
+  const history = useHistory()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  // Sign In
+  const signIn = e => {
+    e.preventDefault()
+
+    // connexion code with firebase
+    auth.signInWithEmailAndPassword(email, password)
+      .then(auth => {
+        history.push('/')
+      })
+      .catch(error => alert(error.message))
+  }
+
+  // Register
+  const register = e => {
+    e.preventDefault()
+
+    // registration code with firebase
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(auth => {
+        // it successfully created a new user with email and password
+        if (auth) {
+          history.push('/')
+        }
+      })
+      .catch(error => alert(error.message))
+  }
+
   return (
     <LoginStyled>
       <Link to='/'>
         <img
-          className="login__logo"
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png' 
+          alt='amazon-clone'
         />
       </Link>
 
@@ -21,12 +54,23 @@ const Login = () => {
 
         <form>
           <h5>E-mail</h5>
-          <input type='text' />
+          <input
+            type='text'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
 
           <h5>Password</h5>
-          <input type='password' />
+          <input
+            type='password'
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
 
-          <SignInButton type='submit'>
+          <SignInButton 
+            type='submit'
+            onClick={signIn}
+          >
             Sign In
           </SignInButton>
         </form>
@@ -36,7 +80,7 @@ const Login = () => {
           see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
         </p>
 
-        <RegisterButton>Create your Amazon Account</RegisterButton>
+        <RegisterButton onClick={register}>Create your Amazon Account</RegisterButton>
       </LoginContainer>
     </LoginStyled>
   )

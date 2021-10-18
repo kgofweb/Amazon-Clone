@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const LoginStyled = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   background-color: white;
   height: 100vh;
 

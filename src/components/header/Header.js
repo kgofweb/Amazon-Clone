@@ -12,9 +12,17 @@ import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 // Use the context
 import { useStateValue } from '../stateProvider/StateProvider'
+import { auth } from '../firebase/firebase'
 
 const Header = () => {
-  const [{ basket }] = useStateValue()
+  const [{ basket, user }, dispatch] = useStateValue()
+
+  // Déconneter correctement l'utilisateur
+  const handleAuthentication = () => {
+    if(user) {
+      auth.signOut()
+    }
+  }
 
   return (
     <HeaderStyled>
@@ -34,10 +42,14 @@ const Header = () => {
 
       {/* Header Nav */}
       <HeaderNav>
-        <Link to='/login' style={{ textDecoration: 'none' }}>
-          <HeaderOption>
-            <HeaderOptionLineOne>Hello</HeaderOptionLineOne>
-            <HeaderOptionLineTwo>Sign In</HeaderOptionLineTwo>
+        <Link to={!user && '/login'} style={{ textDecoration: 'none' }}>
+          <HeaderOption onClick={handleAuthentication}>
+            <HeaderOptionLineOne>
+              Hello {!user ? '' : user.email}
+            </HeaderOptionLineOne>
+            <HeaderOptionLineTwo>
+              {user ? 'Sign Out' : 'Sign In'}
+            </HeaderOptionLineTwo>
           </HeaderOption>
         </Link>
 
