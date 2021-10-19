@@ -23,10 +23,12 @@ export const ProductInfo = styled.div`
 
   button {
     background: #f0c14b;
-    border: 1px solid;
     padding: 1px;
-    margin-top: 10px;
+    margin-top: 15px;
+    border: 1px solid;
+    border-radius: 3px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    cursor: pointer;
   }
 `

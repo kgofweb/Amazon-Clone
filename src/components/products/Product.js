@@ -6,9 +6,10 @@ import {
 } from "./Product.styled"
 import { useStateValue } from "../stateProvider/StateProvider";
 import { actionTypes } from "../reducer/reducer";
+import StarIcon from '@material-ui/icons/Star'
 
 const Product = ({ id, title, price, rating, image }) => {
-  const [{ basket, user }, dispatch] = useStateValue()
+  const [{}, dispatch] = useStateValue()
 
   const addToBasket = () => {
     // Add item to basket
@@ -35,7 +36,7 @@ const Product = ({ id, title, price, rating, image }) => {
         {Array(rating)
           .fill()
           .map((_) => (
-            <p>🌟</p>
+            <StarIcon style={{ color: '#f0c14b' }}/>
           ))}
       </ProductRating>
     </ProductInfo>

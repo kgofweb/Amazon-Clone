@@ -11,7 +11,12 @@ export const ProductStyled = styled.div`
   min-width: 100px;
   max-height: 800px;
   background-color: white;
+  transition: transform .2s;
   z-index: 1;
+
+  :hover {
+    transform: scale(.980);
+  }
 
   @media screen and (max-width: 730px) {
     margin: 10px auto;
@@ -26,11 +31,17 @@ export const ProductStyled = styled.div`
 
   button {
     background: #f0c14b;
+    padding: 5px;
     margin-top: 5px;
     border: 1px solid;
+    border-radius: 3px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
     cursor: pointer;
+
+    :hover {
+      background-color: #ff9900;
+    }
   }
 `
 

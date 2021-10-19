@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CheckoutStyled = styled.div`
   display: flex;
   padding: 20px;
-  background-color: white;
+  background-color: rgba(234, 237, 237);
   height: max-content;
 
   img {
@@ -21,11 +21,4 @@ export const CheckoutTitle = styled.h3`
   padding: 10px 0;
   font-weight: 700;
   border-bottom: 1px solid lightgray;
-`
-
-export const CheckoutLeft = styled.div`
-
-`
-export const CheckoutRight = styled.div`
-
 `

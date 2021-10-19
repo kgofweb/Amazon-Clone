@@ -4,9 +4,10 @@ export const SubTotalStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
+  width: 500px;
   height: 100px;
   padding: 5px 20px 15px;
+  margin-left: 3rem;
   background-color: #f3f3f3;
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -25,6 +26,7 @@ export const SubTotalStyled = styled.div`
   @media screen and (max-width: 730px) {
     width: 450px;
     margin-top: 1.5rem;
+    margin-left: 0;
   }
 `
 

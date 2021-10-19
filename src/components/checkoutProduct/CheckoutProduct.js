@@ -8,9 +8,10 @@ import {
 } from "./CheckoutProduct.styled"
 import { useStateValue } from "../stateProvider/StateProvider"
 import { actionTypes } from "../reducer/reducer"
+import StarIcon from '@material-ui/icons/Star'
 
 const CheckoutProduct = ({id, title, price, rating, image}) => {
-  const [{basket}, dispatch] = useStateValue()
+  const [{ basket }, dispatch] = useStateValue()
 
   const removeFromBasket = () => {
     // Remove item from basket
@@ -34,7 +35,7 @@ const CheckoutProduct = ({id, title, price, rating, image}) => {
           {Array(rating)
             .fill()
             .map((_) => (
-              <p>🌟</p>
+              <StarIcon style={{ color: '#f0c14b', fontSize: '16px', marginTop: '5px' }}/>
             ))}
         </ProductRating>
         <button onClick={removeFromBasket}>Remove from basket</button>

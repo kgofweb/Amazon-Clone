@@ -9,6 +9,7 @@ import { useState } from "react"
 import { auth } from "../firebase/firebase"
 
 const Login = () => {
+  // Permet de rediriger l'utilisateur vers la Home page apres s'etre connecté
   const history = useHistory()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

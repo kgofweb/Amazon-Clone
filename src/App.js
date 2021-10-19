@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { auth } from "./components/firebase/firebase";
 import { actionTypes } from "./components/reducer/reducer";
 import { useStateValue } from "./components/stateProvider/StateProvider";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [{}, dispatch] = useStateValue()
@@ -44,6 +45,7 @@ function App() {
           <Route path='/checkout'>
             <Header />
             <Checkout />
+            <Footer />
           </Route>
           
           <Route path='/login'>
@@ -53,6 +55,7 @@ function App() {
           <Route path='/'>
             <Header />
             <Home />
+            <Footer/>
           </Route>
         </Switch>
       </div>

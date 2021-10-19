@@ -5,10 +5,12 @@ import {
 } from "./Home.styled"
 import Product from "../products/Product"
 
+
 const Home = () => {
+
   return (
     <HomeStyled>
-      <div className="home__container">
+      <div>
         <HomeImgStyled src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg" alt="Amazon" 
         />
 
@@ -26,7 +28,7 @@ const Home = () => {
             title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
             price={239.0}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/41DQoLIfsRL._AC_US327_FMwebp_QL65_.jpg"
+            image="https://m.media-amazon.com/images/I/51AZnBkACeS.jpg"
           />
         </HomeRow>
 
@@ -36,14 +38,14 @@ const Home = () => {
             title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
             price={15.99}
             rating={3}
-            image="https://images-na.ssl-images-amazon.com/images/I/51T-sMqSMiL._SX329_BO1,204,203,200_.jpg"
+            image="https://m.media-amazon.com/images/I/41khVLd9YnS.jpg"
           />
           <Product
             id="23445930"
             title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
             price={98.99}
             rating={5}
-            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+            image="https://m.media-amazon.com/images/I/31gLeUkY72L.jpg"
           />
           <Product
             id="3254354345"
@@ -77,7 +79,7 @@ const Home = () => {
             title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
             price={1094.98}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
+            image="https://technuggets.biz/wp-content/uploads/2017/01/Pdpgallery-un55ku7500fxza-600x600-C1-052016.jpg"
           />
         </HomeRow>
       </div>
