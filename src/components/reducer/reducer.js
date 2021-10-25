@@ -8,11 +8,17 @@ export const initialState = {
 export const actionTypes = {
   ADD_TO_BASKET: 'ADD_TO_BASKET',
   REMOVE_TO_BASKET: 'REMOVE_TO_BASKET',
+  EMPTY_BASKET: 'EMPTY_BASKET',
   SET_USER: 'SET_USER'
 }
 
+// Total basket
+export const getBasketTotal = (basket) => (
+  basket?.reduce((amount, item) => item.price + amount, 0)
+)
+
 export default function reducer(state = initialState, action) {
-  console.log(typeof(action));
+  console.log(action);
   // action à effectuer est d'ajouter des items au panier
   switch (action.type) {
     // Logic for adding item from basket
@@ -42,6 +48,13 @@ export default function reducer(state = initialState, action) {
       return {
         ...state,
         basket: newBasket
+      }
+
+    // Logic for empty basket
+    case actionTypes.EMPTY_BASKET:
+      return {
+        ...state,
+        basket: []
       }
 
     // Logic to set user

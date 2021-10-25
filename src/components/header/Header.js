@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { 
   HeaderStyled,
   HeaderSearch,
+  NavToggle,
   HeaderNav,
   HeaderOption,
   HeaderOptionCountry,
@@ -13,6 +14,7 @@ import {
 } from "./Header.styled"
 import SearchIcon from '@material-ui/icons/Search'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingCartOutlined'
+import Toggle from '@material-ui/icons/Menu'
 // Use the context
 import { useStateValue } from '../stateProvider/StateProvider'
 import { auth } from '../firebase/firebase'
@@ -82,7 +84,7 @@ const Header = () => {
           </HeaderOption>
         </Link>
 
-        <Link to='/' style={{ textDecoration: 'none' }}>
+        <Link to='/orders' style={{ textDecoration: 'none' }}>
           <HeaderOption>
             <HeaderOptionLineOne>Retuns</HeaderOptionLineOne>
             <HeaderOptionLineTwo>& Order</HeaderOptionLineTwo>
@@ -105,6 +107,9 @@ const Header = () => {
           </HeaderOptionBasket>
         </Link>
       </HeaderNav>
+      <NavToggle>
+        <Toggle style={{ color: 'white', fontSize: '1.7rem' }} />
+      </NavToggle>
     </HeaderStyled>
   )
 }

@@ -33,8 +33,9 @@ const Checkout = () => {
             </CheckoutTitle>
 
             {/* List all of the checkout products */}
-            {basket?.map(item => (
+            {basket?.map((item, key) => (
               <CheckoutProduct
+                key={key}
                 id={item.id}
                 title={item.title}
                 price={item.price}

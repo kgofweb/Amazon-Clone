@@ -23,8 +23,16 @@ export const SubTotalStyled = styled.div`
     color: #111;
   }
 
+  @media screen and (max-width: 985px) {
+    width: 650px;
+  }
+
+  @media screen and (max-width: 812px) {
+    width: 800px;
+  }
+
   @media screen and (max-width: 730px) {
-    width: 450px;
+    width: 100%;
     margin-top: 1.5rem;
     margin-left: 0;
   }

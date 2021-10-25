@@ -9,7 +9,7 @@ import { useState } from "react"
 import { auth } from "../firebase/firebase"
 
 const Login = () => {
-  // Permet de rediriger l'utilisateur vers la Home page apres s'etre connecté
+  // Permet de rediriger l'utilisateur vers la Home page apres s'être connecté
   const history = useHistory()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -20,7 +20,7 @@ const Login = () => {
 
     // connexion code with firebase
     auth.signInWithEmailAndPassword(email, password)
-      .then(auth => {
+      .then(() => {
         history.push('/')
       })
       .catch(error => alert(error.message))

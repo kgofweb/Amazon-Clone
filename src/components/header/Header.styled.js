@@ -21,6 +21,10 @@ export const HeaderOptionCountry = styled.span`
   flex-direction: column;
   color: #fff;
   margin-right: 1.5rem;
+
+  @media screen and (max-width: 670px) {
+    display: none;
+  }
 `
 
 export const HeaderCountry = styled.p`
@@ -70,6 +74,29 @@ export const HeaderSearch = styled.div`
   select:focus {
     outline: 2.5px solid #ff9900;
   }
+
+  @media screen and (max-width: 940px) {
+    input {
+      border-radius: 5px 0 0 5px;
+    }
+
+    select {
+      display: none;
+    }
+  }
+`
+export const NavToggle = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 8px;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
 `
 
 export const HeaderNav = styled.nav`
@@ -79,6 +106,20 @@ export const HeaderNav = styled.nav`
 
   .country__logo {
     width: 1.7rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: fixed;
+    top: 8vh;
+    right: -100%;
+    width: 60%;
+    height: calc(100% - 8vh);
+    padding: 5rem 0;
+    background-color: #131921;
+    z-index: 100;
   }
 `
 
@@ -94,6 +135,10 @@ export const SelectCountry = styled.div`
     outline: none;
     color: white;
   }
+
+  @media screen and (max-width: 790px) {
+    display: none;
+  }
 `
 
 export const HeaderOption = styled.div`
@@ -101,16 +146,29 @@ export const HeaderOption = styled.div`
   flex-direction: column;
   color: #fff;
   margin: 0 10px;
+
+  @media screen and (max-width: 768px) {
+    text-align: right;
+    margin-right: 2rem;
+  }
 `
 
 export const HeaderOptionLineOne = styled.span`
   font-size: 12px;
   cursor: auto;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `
 
 export const HeaderOptionLineTwo = styled.span`
   font-size: 13.5px;
   font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `
 export const HeaderOptionBasket = styled.div`
   display: flex;
@@ -120,5 +178,17 @@ export const HeaderOptionBasket = styled.div`
 
   span {
     padding-left: 5px;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-right: 2rem;
+
+    span {
+      font-size: 1.5rem;
+    }
+
+    .MuiSvgIcon-root {
+      font-size: 2rem !important;
+    }
   }
 `
